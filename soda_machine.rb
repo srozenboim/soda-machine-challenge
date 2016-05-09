@@ -10,14 +10,12 @@ class SodaMachine
     @sodas.length
   end
 
-  #look for soda_brand in the sodas array, return the soda_brand if it's there
   def find_soda(soda_brand)
-    if @sodas.include?(soda_brand.downcase) == true
-      soda_brand
-    else
-      return nil
-    end
+    @sodas.find { |soda| soda.brand == soda_brand }
+  else
+    return true
   end
+
 
 
   def sell(soda_brand)
